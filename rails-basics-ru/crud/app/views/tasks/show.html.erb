@@ -1,0 +1,11 @@
+<h1><%= @task.name %></h1>
+<p><b>Task:</b> <%= @task.description %></p>
+<p><b>Status:</b> <%=  @task.status %></p>
+<p><b>From:</b> <%=  @task.creator %></p>
+<p><b>To:</b> <%=  @task.performer %></p>
+<p><b>Completed:</b> <%=  @task.completed %></p>
+<small><%= @task.created_at %></small>
+
+<p><%= link_to 'Edit', edit_task_path(@task) %></p>
+<p><%= link_to 'Delete', task_path(@task), method: :delete, data: { confirm: "R u sure?"} %></p>
+<p><%= link_to 'All Tasks', root_path %></p>

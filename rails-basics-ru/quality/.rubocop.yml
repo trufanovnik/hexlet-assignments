@@ -1,0 +1,16 @@
+require: rubocop-rails
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+
+Lint/Debugger:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: false

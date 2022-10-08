@@ -1,0 +1,39 @@
+<%= form_with model: @task do |form| %>
+	<div>
+		<%= form.label :name %><br>
+		<small><%= task.errors.full_messages_for(:name).join("\n") %></small>
+		<%= form.text_field :name %>
+	</div>
+
+	<div>
+		<%= form.label :description %><br>
+		<%= form.text_field :description %>
+	</div>
+
+	<div>
+		<%= form.label :status %><br>
+		<small><%= task.errors.full_messages_for(:status).join("\n") %></small>
+		<%= form.text_field :status, value: (form.object.status || 'New') %>
+	</div>
+
+	<div>
+		<%= form.label :creator%><br>
+		<small><%= task.errors.full_messages_for(:creator).join("\n") %></small>
+		<%= form.text_field :creator %>
+	</div>
+
+	<div>
+		<%= form.label :performer %><br>
+		<%= form.text_field :performer %>
+	</div>
+
+	<div>
+		<%= form.label :completed %><br>
+		<small><%= task.errors.full_messages_for(:completed).join("\n") %></small>
+		<%= form.text_field :completed %>
+	</div>
+
+	<div>
+		<%= form.submit %>
+	</div>
+<% end %>

@@ -11,13 +11,13 @@ class PostCommentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_post_post_comment_url(@post)
+    get new_post_post_comment_url(@post_comment.post_id)
     assert_response :success
   end
 
   test "should create post_comment" do
     assert_difference("PostComment.count") do
-      post post_post_comments_url(@post), params: { post_comment: { body: @post_comment.body, post_id: @post_comment.post_id } }
+      post post_post_comments_url(@post_comment.post_id), params: { post_comment: { body: @post_comment.body, post_id: @post_comment.post_id } }
     end
 
     assert_redirected_to post_comment_url(PostComment.last)
@@ -43,6 +43,6 @@ class PostCommentsControllerTest < ActionDispatch::IntegrationTest
       delete post_comment_url(@post_comment)
     end
 
-    assert_redirected_to post_comment_url(@post_comment)
+    assert_redirected_to post_url(@post_comment.post_id)
   end
 end

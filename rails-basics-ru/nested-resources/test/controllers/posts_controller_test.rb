@@ -12,7 +12,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
-    get posts_url
+    get root_url
     assert_response :success
   end
 
@@ -54,6 +54,6 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
     assert { !Post.exists?(@post.id) }
 
-    assert_redirected_to posts_url
+    assert_redirected_to root_url
   end
 end

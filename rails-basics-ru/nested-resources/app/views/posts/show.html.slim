@@ -10,7 +10,9 @@ b Post comments
   - @post.post_comments.each do |post_comment|
     = post_comment.body
     p
-      = link_to "Edit comment", edit_post_comment_path
+      = link_to "Edit comment", edit_post_comment_path(post_comment)
+      br
+      = link_to "Delete comment", post_comment_path(post_comment), data: { confirm: 'Are you sure?' }, method: :delete
 / END
 hr
 

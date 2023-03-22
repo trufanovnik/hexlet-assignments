@@ -50,9 +50,9 @@ class PostCommentsController < ApplicationController
   # DELETE /post_comments/1 or /post_comments/1.json
   def destroy
     @post_comment.destroy
-
+    
     respond_to do |format|
-      format.html { redirect_to post_comments_url, notice: "Post comment was successfully destroyed." }
+      format.html { redirect_to post_path(@post_comment.post_id), notice: "Post comment was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -64,7 +64,7 @@ class PostCommentsController < ApplicationController
     end
 
     def set_post_comment
-      debugger
+      #debugger
       @post_comment = PostComment.find(params[:id])
     end
 

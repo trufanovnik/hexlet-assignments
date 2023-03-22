@@ -20,7 +20,7 @@ class PostCommentsControllerTest < ActionDispatch::IntegrationTest
       post post_post_comments_url(@post_comment.post_id), params: { post_comment: { body: @post_comment.body, post_id: @post_comment.post_id } }
     end
 
-    assert_redirected_to post_comment_url(PostComment.last)
+    assert_redirected_to post_url(@post_comment.post_id)
   end
 
   test "should show post_comment" do

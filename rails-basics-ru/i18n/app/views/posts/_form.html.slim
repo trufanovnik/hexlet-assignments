@@ -1,5 +1,6 @@
 = simple_form_for post do |f|
   = f.input :title
   = f.input :body
-
+  = f.error_notification
+  
   = f.button :submit, class: 'btn btn-success mt-4 btn-block'

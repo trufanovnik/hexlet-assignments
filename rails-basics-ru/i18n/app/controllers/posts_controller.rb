@@ -24,6 +24,7 @@ class PostsController < ApplicationController
       redirect_to @post, notice: t('.success')
     else
       render :new, status: :unprocessable_entity
+
     end
   end
 

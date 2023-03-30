@@ -7,12 +7,12 @@ class SetLocaleMiddleware
 
   # BEGIN
   def call(env)
+    accept_language = env['HTTP_ACCEPT_LANGUAGE']
+    locale = accept_language.scan(/^[a-z]{2}/).first rescue I18n.default_locale
 
-    locale = request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first.to_sym rescue I18n.default_locale
     I18n.locale = locale
-    
+
     @app.call(env)
-    
   end
   # END
 end

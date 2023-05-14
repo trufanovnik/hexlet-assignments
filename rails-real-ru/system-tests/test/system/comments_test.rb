@@ -3,7 +3,7 @@
 require 'application_system_test_case'
 
 # BEGIN
-class CommentTest < ApplicationSystemTestCase
+class CommentsTest < ApplicationSystemTestCase
     setup do
       @post = posts(:one)
     end

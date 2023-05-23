@@ -1,0 +1,15 @@
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+
+yandex:
+  service: S3
+  access_key_id: YCAJEw6nXd5DDFjYcJEyZHXZM
+  secret_access_key: YCNPNE9tdE03vxI2Aq1cys3z2JkfQuFGaZ8CtJFB
+  region: ru-central1
+  bucket: cloud-truf4nov-nikita
+  endpoint: 'https://storage.yandexcloud.net'

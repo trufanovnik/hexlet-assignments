@@ -9,7 +9,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     @attrs = {
       name: Faker::Movies::BackToTheFuture.character,
       email: Faker::Internet.email,
-      password:,
+      password: password,
       password_confirmation: password
     }
   end
